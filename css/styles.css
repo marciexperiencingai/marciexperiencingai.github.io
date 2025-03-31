@@ -1,0 +1,537 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --accent-color: #ff0000;
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity var(--transition-speed) ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Header styles - matching Kvataniya's site exactly */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: background-color 0.4s ease;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    transition: opacity var(--transition-speed);
+}
+
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--text-color);
+    transition: width var(--transition-speed) ease;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+/* Main content container */
+main {
+    margin-top: 80px;
+    width: 100%;
+}
+
+/* Section styles */
+section {
+    margin: 80px 0 60px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    padding: 0 22px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    opacity: 0.85;
+    font-weight: 500;
+}
+
+/* Grid layout for videos - full width with no gap like Kvataniya's site */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #0a0a0a;
+    aspect-ratio: 16 / 9;
+}
+
+.grid-item a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grid-item:hover img {
+    transform: scale(1.03);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+}
+
+.grid-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+.grid-item:hover .overlay h3 {
+    transform: translateY(0);
+}
+
+/* Staff Pick badge - styled like Vimeo's badge */
+.staff-pick {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Changed to right like in the screenshot */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQ5IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTMwLjQ5MzQgNjcuNTI0NlY0MC4wMDI2SDM1LjQyMzRWNjcuNTI0NkgzMC40OTM0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ1LjUwNTQgNjcuNTI0NlY0MC4wMDI2SDUwLjcxNDZMNjMuNTU4MiA1OS43NTMySFYzOS45MDI5SDY4LjQzODZWNjcuNDI0OUg2My4yMjk0TDUwLjM4NTkgNDcuNjc0M0g1MC4zMzYyVjY3LjUyNDZINDUuNTA1NFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+    z-index: 10;
+    opacity: 0.9;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.staff-pick:after {
+    content: "STAFF PICK";
+    display: none;
+}
+
+/* Footer */
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links a {
+    margin: 0 15px;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+/* Video page styles */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 100px auto 0;
+    width: 100%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+}
+
+.video-info {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.video-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.video-description {
+    opacity: 0.9;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.video-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.meta-section {
+    flex: 1;
+    min-width: 180px;
+}
+
+.meta-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.meta-section p {
+    line-height: 1.6;
+}
+
+/* Special thanks section */
+.special-thanks {
+    margin: 30px 0 60px;
+}
+
+.special-thanks .meta-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.special-thanks p {
+    line-height: 1.6;
+    max-width: 100%;
+}
+
+/* Related videos title */
+.related-videos h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    opacity: 0.85;
+    font-weight: 500;
+}
+
+/* About page styles */
+.about-container {
+    max-width: 800px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+}
+
+.about-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    line-height: 1.8;
+    color: white;
+}
+
+.about-content h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 500;
+}
+
+.about-content p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Awards list styling */
+.awards-list {
+    margin: 0 0 30px 20px;
+    color: white;
+}
+
+.awards-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info h2 {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: white;
+}
+
+.contact-item {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.contact-label {
+    font-weight: 500;
+    opacity: 0.7;
+    width: 100px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.contact-item a:hover {
+    opacity: 0.7;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page transitions */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.page-transition.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav {
+        margin-top: 15px;
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    nav ul {
+        width: max-content;
+    }
+    
+    nav ul li {
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+    
+    nav ul li:first-child {
+        margin-left: 0;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        padding: 0 15px;
+        margin-bottom: 15px;
+    }
+    
+    section {
+        margin: 80px 0 40px;
+    }
+    
+    .video-title {
+        font-size: 1.5rem;
+    }
+    
+    .video-meta {
+        gap: 20px;
+    }
+    
+    .about-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
