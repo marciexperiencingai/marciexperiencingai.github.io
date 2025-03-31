@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /about.html
+Allow: /video*.html
+Allow: /commercial*.html
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /private/
+Sitemap: https://www.balazsbuki.com/sitemap.xml 
