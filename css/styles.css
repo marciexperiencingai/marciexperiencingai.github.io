@@ -94,16 +94,33 @@ nav ul li a {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     position: relative;
-    transition: opacity var(--transition-speed);
+    transition: all var(--transition-speed);
     font-weight: 200;
-    opacity: 0.75;
+    opacity: 1;
     display: block;
     visibility: visible;
     text-decoration: none;
     color: var(--text-color);
 }
 
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-color);
+    transition: width var(--transition-speed);
+    opacity: 0;
+}
+
 nav ul li a:hover {
+    opacity: 1;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
     opacity: 1;
 }
 
