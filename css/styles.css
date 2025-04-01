@@ -65,7 +65,7 @@ header {
 .logo a {
     font-size: 1.8rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.4em;
     text-transform: uppercase;
 }
 
