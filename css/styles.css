@@ -85,9 +85,13 @@ header {
 nav {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
+    width: 100%;
     padding: 20px;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 nav ul {
@@ -95,6 +99,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: center;
     gap: 40px;
 }
 
@@ -106,23 +111,6 @@ nav a {
     transition: opacity var(--transition-speed);
     opacity: 0.75;
     white-space: nowrap;
-    position: relative;
-}
-
-nav a:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--text-color);
-    transition: width var(--transition-speed);
-}
-
-nav a:hover:after,
-nav a.active:after {
-    width: 100%;
 }
 
 nav a:hover,
@@ -188,10 +176,6 @@ nav a.active {
 
     nav a {
         font-size: 0.9rem;
-    }
-
-    nav a:after {
-        display: none;
     }
 
     main {
