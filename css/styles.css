@@ -45,8 +45,8 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 100%;
@@ -84,8 +84,8 @@ nav {
     left: 0;
     width: 100%;
     padding: 20px;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -117,7 +117,7 @@ nav a.active {
 @media (max-width: 768px) {
     header {
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
@@ -132,10 +132,11 @@ nav a.active {
 
     nav {
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        top: 70px;
+        top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     nav ul {
@@ -146,6 +147,7 @@ nav a.active {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        padding: 0 5px;
     }
 
     nav ul::-webkit-scrollbar {
