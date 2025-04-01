@@ -65,8 +65,8 @@ header {
 .logo a {
     font-size: 1.8rem;
     font-weight: 600;
-    letter-spacing: 0.25em;
-    -webkit-letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
+    -webkit-letter-spacing: 0.2em;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
 }
