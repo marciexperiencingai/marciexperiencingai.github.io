@@ -107,6 +107,17 @@ nav ul li a:hover:after {
     width: 100%;
 }
 
+/* Active navigation link */
+nav ul li a.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+nav ul li a.active:after {
+    width: 100%;
+    opacity: 1;
+}
+
 /* Main content container */
 main {
     margin-top: 80px;
