@@ -107,6 +107,9 @@ nav a {
     opacity: 0.75;
     white-space: nowrap;
     position: relative;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 nav a:after {
@@ -188,6 +191,9 @@ nav a.active {
 
     nav a {
         font-size: 0.9rem;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     nav a:after {
