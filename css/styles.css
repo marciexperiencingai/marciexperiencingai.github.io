@@ -94,6 +94,8 @@ nav ul li a {
     transition: opacity var(--transition-speed);
     font-weight: 200;
     opacity: 0.75;
+    display: block;
+    visibility: visible;
 }
 
 nav ul li a:after {
