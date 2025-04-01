@@ -45,8 +45,10 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    background-color: transparent;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 100%;
     max-width: 1800px;
     margin: 0 auto;
@@ -543,7 +545,7 @@ footer {
 @media (max-width: 768px) {
     header {
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.95);
+        background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         max-width: 100%;
@@ -563,7 +565,7 @@ footer {
         left: 0;
         width: 100%;
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.95);
+        background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         margin-left: 0;
