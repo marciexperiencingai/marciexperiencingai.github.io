@@ -90,7 +90,7 @@ nav ul li a {
     text-transform: uppercase;
     position: relative;
     transition: opacity var(--transition-speed);
-    font-weight: 300;
+    font-weight: 200;
     opacity: 0.7;
 }
 
@@ -112,7 +112,7 @@ nav ul li a:hover:after {
 /* Active navigation link */
 nav ul li a.active {
     opacity: 1;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 nav ul li a.active:after {
