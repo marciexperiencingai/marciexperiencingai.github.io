@@ -150,6 +150,19 @@ nav a.active {
     nav a {
         font-size: 0.9rem;
     }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        padding: 0 15px;
+        margin-bottom: 15px;
+    }
+
+    section {
+        margin: 80px 0 40px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -541,6 +554,24 @@ footer {
 @media (min-width: 1200px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-item img {
+        height: 50vh;
+    }
+    
+    .featured-item .overlay h2 {
+        font-size: 2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr !important;
     }
 }
 
