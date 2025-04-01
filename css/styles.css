@@ -136,7 +136,6 @@ nav a.active {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         top: 60px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     nav ul {
@@ -150,25 +149,17 @@ nav a.active {
         padding: 0 5px;
     }
 
-    nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-    }
-
     .grid-container {
         grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        padding: 0 15px;
-        margin-bottom: 15px;
+        margin-top: 60px;
     }
 
     section {
-        margin: 80px 0 40px;
+        margin: 120px 0 40px;
+    }
+
+    main {
+        margin-top: 120px;
     }
 }
 
