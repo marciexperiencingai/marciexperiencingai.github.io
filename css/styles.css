@@ -80,10 +80,13 @@ header {
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
     margin-left: 25px;
+    display: block;
 }
 
 nav ul li a {
@@ -96,21 +99,12 @@ nav ul li a {
     opacity: 0.75;
     display: block;
     visibility: visible;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
-nav ul li a:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -3px;
-    left: 0;
-    background-color: var(--text-color);
-    transition: width var(--transition-speed) ease;
-}
-
-nav ul li a:hover:after {
-    width: 100%;
+nav ul li a:hover {
+    opacity: 1;
 }
 
 /* Active navigation link */
