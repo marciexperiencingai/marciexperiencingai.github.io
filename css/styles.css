@@ -425,35 +425,34 @@ footer {
 .contact-info {
     margin-top: 40px;
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 2;
     font-weight: 300;
     letter-spacing: 0.3px;
-    opacity: 0.9;
 }
 
 .contact-item {
-    margin-bottom: 15px;
-    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: baseline;
 }
 
 .contact-label {
     font-weight: 300;
-    opacity: 0.7;
-    width: 100px;
-    display: inline-block;
+    width: 180px;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
 }
 
-.contact-item a {
+.contact-value {
     color: white;
     text-decoration: none;
     transition: opacity var(--transition-speed);
+    font-size: 1.1rem;
 }
 
-.contact-item a:hover {
+.contact-value:hover {
     opacity: 0.8;
 }
 
