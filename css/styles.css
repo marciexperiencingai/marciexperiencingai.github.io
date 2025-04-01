@@ -431,19 +431,33 @@ footer {
     opacity: 0.9;
 }
 
-.contact-info a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: opacity var(--transition-speed);
-    display: block;
-    margin-bottom: 10px;
+.contact-item {
+    margin-bottom: 15px;
+    color: white;
 }
 
-.contact-info a:hover {
+.contact-label {
+    font-weight: 300;
+    opacity: 0.7;
+    width: 100px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: opacity var(--transition-speed);
+}
+
+.contact-item a:hover {
     opacity: 0.8;
 }
 
-.contact-info a:last-child {
+.contact-item:last-child {
     margin-bottom: 0;
 }
 
