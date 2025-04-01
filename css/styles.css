@@ -646,4 +646,26 @@ footer {
     .featured-item .overlay h2 {
         font-size: 2rem;
     }
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text strong {
+    font-weight: 400;
+    opacity: 1;
 } 
