@@ -46,16 +46,15 @@ header {
     left: 0;
     right: 0;
     z-index: 1001;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: transparent;
     width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
-    z-index: 1001;
 }
 
 .logo a {
@@ -65,7 +64,6 @@ header {
     -webkit-letter-spacing: 0.15em !important;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
-    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -85,9 +83,7 @@ nav {
     width: 100%;
     padding: 20px;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: transparent;
 }
 
 nav ul {
@@ -103,78 +99,17 @@ nav a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     transition: opacity var(--transition-speed);
     opacity: 0.75;
     white-space: nowrap;
+    font-weight: 300;
 }
 
 nav a:hover,
 nav a.active {
     opacity: 1;
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-        background-color: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-
-    .logo a {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.7rem;
-    }
-
-    nav {
-        padding: 15px;
-        background-color: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        top: 60px;
-    }
-
-    nav ul {
-        gap: 20px;
-        justify-content: flex-start;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 0 5px;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr;
-        margin-top: 60px;
-    }
-
-    section {
-        margin: 120px 0 40px;
-    }
-
-    main {
-        margin-top: 120px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo a {
-        font-size: 1.3rem;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 0.85rem;
-    }
 }
 
 /* Main content container */
@@ -201,7 +136,7 @@ section {
     font-weight: 500;
 }
 
-/* Grid layout for videos - full width with no gap like Kvataniya's site */
+/* Grid layout for videos */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -575,20 +510,60 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .featured-grid {
-        grid-template-columns: 1fr;
+    header {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        max-width: 100%;
     }
-    
-    .featured-item img {
-        height: 50vh;
+
+    .logo a {
+        font-size: 1.5rem;
     }
-    
-    .featured-item .overlay h2 {
-        font-size: 2rem;
+
+    .subtitle {
+        font-size: 0.7rem;
+    }
+
+    nav {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        top: 60px;
+    }
+
+    nav ul {
+        gap: 20px;
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 0 5px;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        font-size: 0.9rem;
     }
 
     .grid-container {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+    }
+
+    section {
+        margin: 120px 0 40px;
+    }
+
+    main {
+        margin-top: 120px;
     }
 }
 
