@@ -110,12 +110,13 @@ nav ul li a:hover:after {
 /* Active navigation link */
 nav ul li a.active {
     opacity: 1;
-    font-weight: 600;
 }
 
 nav ul li a.active:after {
     width: 100%;
+    height: 1px;
     opacity: 1;
+    background-color: var(--text-color);
 }
 
 /* Main content container */
