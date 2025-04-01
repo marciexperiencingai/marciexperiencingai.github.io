@@ -213,6 +213,25 @@ section {
     margin: 0;
 }
 
+@media screen and (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    @media screen and (max-width: 768px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+    }
+}
+
 .grid-item {
     position: relative;
     overflow: hidden;
