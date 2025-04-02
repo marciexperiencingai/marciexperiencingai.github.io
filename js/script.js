@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             // Page was loaded from back-forward cache
-            transitionOverlay.classList.remove('active');
+            window.location.reload();
         }
     });
 
     window.addEventListener('popstate', function(event) {
-        // Remove transition overlay when navigating back
-        transitionOverlay.classList.remove('active');
+        // Force refresh when using back button
+        window.location.reload();
     });
 
     // Remove transition overlay on page load
