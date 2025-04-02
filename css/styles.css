@@ -236,13 +236,12 @@ nav a.active {
     }
 }
 
-/* Main content container */
+/* Main content */
 main {
-    margin-top: var(--header-height);
-    padding: 20px;
-    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     max-width: 100%;
-    overflow-x: hidden;
+    margin: 0 auto;
 }
 
 /* Section styles */
@@ -410,11 +409,11 @@ footer {
     opacity: 1;
 }
 
-/* Video page styles */
+/* Video container */
 .video-container {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     position: relative;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
     background-color: #000;
