@@ -1,17 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Add page transition element
-    const transitionElement = document.createElement('div');
-    transitionElement.className = 'page-transition';
-    document.body.appendChild(transitionElement);
+    // Create transition overlay
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.className = 'page-transition';
+    document.body.appendChild(transitionOverlay);
+
+    // Handle all navigation links
+    document.querySelectorAll('a[href]:not([target="_blank"])').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            
+            // Don't handle external links or anchor links
+            if (href.startsWith('http') || href.startsWith('#')) {
+                window.location.href = href;
+                return;
+            }
+
+            // Show transition overlay
+            transitionOverlay.classList.add('active');
+            
+            // Navigate after a short delay
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300);
+        });
+    });
+
+    // Handle back/forward navigation
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page was loaded from back-forward cache
+            transitionOverlay.classList.remove('active');
+        }
+    });
+
+    window.addEventListener('popstate', function(event) {
+        // Remove transition overlay when navigating back
+        transitionOverlay.classList.remove('active');
+    });
+
+    // Remove transition overlay on page load
+    window.addEventListener('load', function() {
+        transitionOverlay.classList.remove('active');
+    });
 
     // Apply entrance animation to elements
     animateContent();
     
     // Handle smooth scrolling for navigation
     setupSmoothScrolling();
-    
-    // Handle page transitions
-    setupPageTransitions();
     
     // Setup lazy loading for images
     setupLazyLoading();
@@ -59,35 +96,6 @@ function setupSmoothScrolling() {
                     behavior: 'smooth'
                 });
             }
-        });
-    });
-}
-
-// Handle page transitions for navigation
-function setupPageTransitions() {
-    // Get all navigation links that lead to other pages (not anchor links)
-    const pageLinks = document.querySelectorAll('a:not([href^="#"])');
-    
-    pageLinks.forEach(link => {
-        // Skip external links
-        if (link.hostname !== window.location.hostname) return;
-        
-        link.addEventListener('click', function(e) {
-            const transitionElement = document.querySelector('.page-transition');
-            const targetPage = this.getAttribute('href');
-            
-            // Don't apply transition to links with target="_blank"
-            if (this.getAttribute('target') === '_blank') return;
-            
-            e.preventDefault();
-            
-            // Activate transition overlay
-            transitionElement.classList.add('active');
-            
-            // Navigate to the new page after transition completes
-            setTimeout(() => {
-                window.location.href = targetPage;
-            }, 500);
         });
     });
 }
