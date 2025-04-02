@@ -242,6 +242,13 @@ main {
     padding-bottom: 1rem;
     max-width: 100%;
     margin: 0 auto;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    will-change: opacity, visibility;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 /* Section styles */
@@ -671,12 +678,27 @@ footer {
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    will-change: opacity, visibility;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .page-transition.active {
     opacity: 1;
     visibility: visible;
+}
+
+/* Ensure main content is visible during transitions */
+main {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    will-change: opacity, visibility;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 /* Responsive design */
