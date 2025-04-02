@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Top Model Hungary | Balázs Büki</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.0.7">
+    <link rel="stylesheet" href="css/styles.css?v=1.0.8">
     <meta name="description" content="Next Top Model Hungary commercial directed by Balázs Büki.">
     <meta name="keywords" content="Balázs Büki, Next Top Model Hungary, commercial director">
     <!-- Favicon -->
@@ -29,14 +29,14 @@
     <main>
         <div class="commercial-container fade-in">
             <iframe 
-                src="https://player.vimeo.com/video/1065822724?h=0f0f0f0f&title=0&byline=0&portrait=0" 
+                src="https://player.vimeo.com/video/1065822724?h=0f0f0f0f&title=0&byline=0&portrait=0&_=<?php echo time(); ?>" 
                 frameborder="0" 
                 allow="autoplay; fullscreen; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
         <div class="video-info fade-in">
-            <h1>HELL ICE COFFEE - SUMMER VIBES</h1>
+            <h1>NEXT TOP MODEL HUNGARY</h1>
             <p class="director">Directed by Balázs Büki</p>
         </div>
     </main>
@@ -50,5 +50,12 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Force refresh on page load
+        window.addEventListener('load', function() {
+            const iframe = document.querySelector('iframe');
+            iframe.src = iframe.src + '&_=' + new Date().getTime();
+        });
+    </script>
 </body>
 </html> 
