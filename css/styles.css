@@ -238,7 +238,7 @@ nav a.active {
 
 /* Main content */
 main {
-    padding-top: 1rem;
+    padding-top: var(--header-height);
     padding-bottom: 1rem;
     max-width: 100%;
     margin: 0 auto;
@@ -246,7 +246,7 @@ main {
 
 /* Section styles */
 section {
-    margin: 40px 0 30px;
+    margin: 0;
     padding-top: 10px;
     width: 100%;
 }
