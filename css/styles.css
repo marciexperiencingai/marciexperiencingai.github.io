@@ -131,7 +131,7 @@ nav a.active {
         z-index: 1001;
         border-bottom: none;
         height: auto;
-        padding-bottom: 0;
+        padding-bottom: 15px;
     }
 
     .logo a {
@@ -140,26 +140,22 @@ nav a.active {
 
     .subtitle {
         font-size: 0.7rem;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
 
     nav {
-        position: fixed;
-        top: 85px;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 15px;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-        border-top: none;
+        position: static;
+        width: 100%;
+        padding: 0 15px;
+        margin-top: 20px;
+        transform: none;
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     nav.active {
-        transform: translateY(0);
+        transform: none;
     }
 
     nav ul {
@@ -170,7 +166,7 @@ nav a.active {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        padding: 0 5px;
+        padding: 0;
     }
 
     nav ul::-webkit-scrollbar {
@@ -188,7 +184,7 @@ nav a.active {
     }
 
     main {
-        margin-top: 85px;
+        margin-top: 120px;
     }
 
     .grid-container {
@@ -201,7 +197,7 @@ nav a.active {
     }
 
     section {
-        margin: 80px 0 40px;
+        margin: 40px 0;
     }
 }
 
