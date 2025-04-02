@@ -29,6 +29,7 @@
     <main>
         <div class="commercial-container fade-in">
             <iframe 
+                id="vimeo-player"
                 src="https://player.vimeo.com/video/1065815160?h=0f0f0f0f&title=0&byline=0&portrait=0&autoplay=0&showinfo=0&controls=1&quality=auto" 
                 frameborder="0" 
                 allow="autoplay; fullscreen; picture-in-picture" 
@@ -68,5 +69,12 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Refresh iframe on page load
+        window.addEventListener('load', function() {
+            const iframe = document.getElementById('vimeo-player');
+            iframe.src = iframe.src + '&_=' + new Date().getTime();
+        });
+    </script>
 </body>
 </html> 
