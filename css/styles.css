@@ -131,7 +131,12 @@ nav a.active {
         z-index: 1001;
         border-bottom: none;
         height: auto;
-        padding-bottom: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 15px;
     }
 
     .logo a {
@@ -140,14 +145,14 @@ nav a.active {
 
     .subtitle {
         font-size: 0.7rem;
-        margin-bottom: 15px;
+        margin-bottom: 0;
     }
 
     nav {
         position: static;
         width: 100%;
-        padding: 0 15px;
-        margin-top: 20px;
+        padding: 15px 0 0 0;
+        margin: 0;
         transform: none;
         background: none;
         backdrop-filter: none;
