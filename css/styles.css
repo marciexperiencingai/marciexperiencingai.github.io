@@ -370,15 +370,26 @@ footer {
     text-align: center;
     margin-top: 80px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 1000;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .footer-links a {
-    margin: 0 15px;
+    margin: 0;
     font-size: 0.75rem;
     opacity: 0.7;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: opacity 0.3s;
+    white-space: nowrap;
 }
 
 .footer-links a:hover {
@@ -637,6 +648,25 @@ footer {
 
     .grid-container {
         grid-template-columns: 1fr !important;
+    }
+
+    footer {
+        padding: 20px;
+        margin-top: 60px;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 0 10px;
+    }
+
+    .footer-links::-webkit-scrollbar {
+        display: none;
     }
 }
 
