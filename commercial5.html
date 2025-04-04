@@ -9,8 +9,6 @@
     <meta name="keywords" content="Balázs Büki, Next Top Model Hungary, commercial director">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Vimeo Player API -->
-    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
     <header>
@@ -30,7 +28,12 @@
 
     <main>
         <div class="commercial-container fade-in">
-            <div id="vimeo-player"></div>
+            <iframe 
+                src="https://player.vimeo.com/video/1065822724?h=0f0f0f0f&title=0&byline=0&portrait=0" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
         <div class="video-info fade-in">
             <h1>NEXT TOP MODEL HUNGARY</h1>
@@ -47,26 +50,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        var options = {
-            id: 1071123174,
-            width: 1280,
-            height: 720,
-            title: false,
-            byline: false,
-            portrait: false,
-            dnt: true
-        };
-
-        var player = new Vimeo.Player('vimeo-player', options);
-
-        player.on('loaded', function() {
-            console.log('Player loaded successfully');
-        });
-
-        player.on('error', function(error) {
-            console.error('Player error:', error);
-        });
-    </script>
 </body>
 </html> 
