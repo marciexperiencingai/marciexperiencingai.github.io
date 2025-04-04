@@ -29,7 +29,7 @@
     <main>
         <div class="commercial-container fade-in">
             <iframe 
-                src="https://player.vimeo.com/video/1071121619?h=0f0f0f0f&title=0&byline=0&portrait=0" 
+                src="https://player.vimeo.com/video/1071121619?h=0f0f0f0f&title=0&byline=0&portrait=0&_=<?php echo time(); ?>" 
                 frameborder="0" 
                 allow="autoplay; fullscreen; picture-in-picture" 
                 allowfullscreen>
@@ -50,5 +50,12 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Force refresh on page load
+        window.addEventListener('load', function() {
+            const iframe = document.querySelector('iframe');
+            iframe.src = iframe.src + '&_=' + new Date().getTime();
+        });
+    </script>
 </body>
 </html> 
