@@ -77,16 +77,24 @@
             dnt: true,
             autoplay: false,
             controls: true,
-            quality: 'auto'
+            quality: 'auto',
+            responsive: true,
+            playsinline: true,
+            pip: true
         };
 
         var player = new Vimeo.Player('vimeo-player', options);
 
-        // Add cache busting
+        // Add cache busting and handle privacy settings
         player.on('loaded', function() {
             console.log('Player loaded successfully');
-            // Force refresh the player
-            player.loadVideo(options.id + '?_=' + new Date().getTime());
+            // Force refresh the player with privacy hash
+            var timestamp = new Date().getTime();
+            player.loadVideo({
+                id: options.id,
+                h: '0f0f0f0f',
+                _: timestamp
+            });
         });
 
         player.on('error', function(error) {
