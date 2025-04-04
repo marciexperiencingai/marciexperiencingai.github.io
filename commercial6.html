@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sztárban Sztár Promo - TV2 | Balázs Büki</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.0.7">
+    <link rel="stylesheet" href="css/styles.css?v=1.0.8">
     <meta name="description" content="Sztárban Sztár Promo - TV2 commercial directed by Balázs Büki.">
     <meta name="keywords" content="Balázs Büki, Sztárban Sztár, TV2, commercial director">
     <!-- Favicon -->
@@ -29,14 +29,15 @@
     <main>
         <div class="commercial-container fade-in">
             <iframe 
-                src="https://player.vimeo.com/video/1071115902?h=0f0f0f0f&title=0&byline=0&portrait=0" 
+                id="vimeo-player"
+                src="https://player.vimeo.com/video/1071469605?h=0f0f0f0f&title=0&byline=0&portrait=0" 
                 frameborder="0" 
                 allow="autoplay; fullscreen; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
         <div class="video-info fade-in">
-            <h1>HELL ICE COFFEE - REFRESHING MOMENTS</h1>
+            <h1>SZTÁRBAN SZTÁR PROMO - TV2</h1>
             <p class="director">Directed by Balázs Büki</p>
         </div>
     </main>
@@ -50,5 +51,13 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Force refresh on page load
+        window.addEventListener('load', function() {
+            const iframe = document.getElementById('vimeo-player');
+            const timestamp = new Date().getTime();
+            iframe.src = iframe.src.split('&_=')[0] + '&_=' + timestamp;
+        });
+    </script>
 </body>
 </html> 
