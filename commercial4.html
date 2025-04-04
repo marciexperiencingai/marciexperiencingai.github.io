@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hell Ice Coffee - Business Casual | Balázs Büki</title>
     <link rel="stylesheet" href="css/styles.css?v=1.0.8">
-    <meta name="description" content="Hell Ice Coffee - Business Casual commercial directed by Balázs Büki.">
+    <meta name="description" content="Hell Ice Coffee - Business Casual commercial directed by Balázs Büki">
     <meta name="keywords" content="Balázs Büki, Hell Ice Coffee, commercial director, Business Casual">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Vimeo Player API -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
     <header>
@@ -28,12 +30,7 @@
 
     <main>
         <div class="commercial-container fade-in">
-            <iframe 
-                src="https://player.vimeo.com/video/1071121619?h=0f0f0f0f&title=0&byline=0&portrait=0&_=<?php echo time(); ?>" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+            <div id="vimeo-player"></div>
         </div>
         <div class="video-info fade-in">
             <h1>HELL ICE COFFEE - BUSINESS CASUAL</h1>
@@ -51,10 +48,31 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Force refresh on page load
-        window.addEventListener('load', function() {
-            const iframe = document.querySelector('iframe');
-            iframe.src = iframe.src + '&_=' + new Date().getTime();
+        // Initialize Vimeo player with the correct video ID and cache busting
+        var options = {
+            id: 1071121619,
+            width: 1280,
+            height: 720,
+            title: false,
+            byline: false,
+            portrait: false,
+            dnt: true,
+            autoplay: false,
+            controls: true,
+            quality: 'auto'
+        };
+
+        var player = new Vimeo.Player('vimeo-player', options);
+
+        // Add cache busting
+        player.on('loaded', function() {
+            console.log('Player loaded successfully');
+            // Force refresh the player
+            player.loadVideo(options.id + '?_=' + new Date().getTime());
+        });
+
+        player.on('error', function(error) {
+            console.error('Player error:', error);
         });
     </script>
 </body>
