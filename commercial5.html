@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Top Model Hungary | Balázs Büki</title>
     <link rel="stylesheet" href="css/styles.css?v=1.0.8">
-    <meta name="description" content="Next Top Model Hungary commercial directed by Balázs Büki.">
-    <meta name="keywords" content="Balázs Büki, Next Top Model Hungary, commercial director">
+    <meta name="description" content="Next Top Model Hungary commercial directed by Balázs Büki">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Vimeo Player API -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
-<body>
+<body class="commercial-page">
     <header>
         <div class="logo">
             <a href="index.html">Balázs Büki</a>
@@ -27,17 +28,46 @@
     </header>
 
     <main>
+        <!-- 
+            Video Container Configuration - DO NOT MODIFY:
+            - Vimeo ID: 1065822724
+            - Container class must remain "commercial-container"
+            - Padding must remain 56.25% for 16:9 aspect ratio
+            - Position must remain relative/absolute for proper scaling
+            - Width/height must remain 100% for proper filling
+        -->
         <div class="commercial-container fade-in">
-            <iframe 
-                src="https://player.vimeo.com/video/1065822724?h=0f0f0f0f&title=0&byline=0&portrait=0" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe 
+                    src="https://player.vimeo.com/video/1065822724?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                    title="Next Top Model Hungary"
+                    loading="lazy">
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
         <div class="video-info fade-in">
-            <h1>NEXT TOP MODEL HUNGARY</h1>
-            <p class="director">Directed by Balázs Büki</p>
+            <h1 class="video-title">NEXT TOP MODEL HUNGARY</h1>
+            
+            <div class="video-meta">
+                <div class="meta-section">
+                    <h4 class="meta-title">DIRECTOR</h4>
+                    <p>Büki Balázs</p>
+                </div>
+                
+                <div class="meta-section">
+                    <h4 class="meta-title">PRODUCTION COMPANY</h4>
+                    <p>Deep Creative Collection</p>
+                </div>
+                
+                <div class="meta-section">
+                    <h4 class="meta-title">CLIENT</h4>
+                    <p>TV2</p>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -45,10 +75,38 @@
         <div class="footer-links">
             <a href="index.html">HOME</a>
             <a href="https://www.instagram.com/bukibalazsmate/" target="_blank" rel="noopener">INSTAGRAM</a>
-            <a href="https://vimeo.com/bukibalazsmate" target="_blank" rel="noopener">VIMEO/bukibalazsmate</a>
+            <a href="https://vimeo.com/user55610504" target="_blank" rel="noopener">VIMEO/BUKIBALAZSMATE</a>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Initialize Vimeo player with the correct video ID and cache busting
+        var options = {
+            id: 1065822724,
+            width: 1280,
+            height: 720,
+            title: false,
+            byline: false,
+            portrait: false,
+            dnt: true,
+            autoplay: false,
+            controls: true,
+            quality: 'auto'
+        };
+
+        var player = new Vimeo.Player('vimeo-player', options);
+
+        // Add cache busting
+        player.on('loaded', function() {
+            console.log('Player loaded successfully');
+            // Force refresh the player
+            player.loadVideo(options.id + '?_=' + new Date().getTime());
+        });
+
+        player.on('error', function(error) {
+            console.error('Player error:', error);
+        });
+    </script>
 </body>
 </html> 
