@@ -1058,4 +1058,47 @@ header {
     .commercial-page main {
         padding-top: calc(var(--header-height) + 20px);
     }
+}
+
+/* Commercial Container Styles - DO NOT MODIFY */
+.commercial-page .commercial-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: var(--header-height) !important;
+    position: relative !important;
+    background: #000 !important;
+    overflow: hidden !important;
+}
+
+.commercial-page .commercial-container > div {
+    width: 100% !important;
+    margin: 0 !important;
+    background: #000 !important;
+}
+
+.commercial-page .commercial-container iframe {
+    border: none !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Ensure proper spacing for commercial pages */
+.commercial-page main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #000 !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Mobile adjustments for commercial pages */
+@media (max-width: 768px) {
+    .commercial-page .commercial-container {
+        margin-top: calc(var(--header-height) + 20px) !important;
+    }
 } 
