@@ -997,4 +997,72 @@ main {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: translateZ(0);
+}
+
+/* Commercial page specific styles */
+.commercial-page main {
+    padding-top: var(--header-height);
+    margin: 0;
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.commercial-page .video-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+.commercial-page .video-info {
+    width: 100%;
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+/* Video container styles */
+.video-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+.video-container > div {
+    width: 100%;
+    margin: 0;
+    background: #000;
+}
+
+.video-container iframe {
+    border: none;
+    display: block;
+}
+
+/* Ensure header stays on top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .commercial-page main {
+        padding-top: calc(var(--header-height) + 20px);
+    }
 } 
