@@ -103,8 +103,9 @@ header {
 
 nav {
     position: fixed;
-    top: 15px;
+    top: 50%;
     right: 20px;
+    transform: translateY(-50%);
     z-index: 1000;
 }
 
@@ -113,6 +114,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     gap: 30px;
 }
 
@@ -165,40 +167,15 @@ nav a.active {
 
     nav {
         position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 10px 15px;
-        background-color: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        z-index: 1000;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        transform: none;
     }
 
     nav ul {
+        flex-direction: row;
         gap: 20px;
-        justify-content: flex-start;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 0;
-    }
-
-    nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-    }
-
-    nav a.active {
-        text-decoration: underline;
-        text-underline-offset: 5px;
     }
 
     main {
