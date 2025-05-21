@@ -501,7 +501,7 @@ footer {
 .commercials-page main,
 .werk-page main,
 .home-page main {
-    padding-top: var(--header-height);
+    padding: 0;
     margin: 0;
     background: #000;
     min-height: 100vh;
@@ -796,11 +796,11 @@ main {
     .commercials-page main,
     .werk-page main,
     .home-page main {
-        padding-top: calc(var(--header-height) + 20px);
+        padding: 0;
     }
 
     .werk-container {
-        margin-top: calc(var(--header-height) + 20px);
+        margin-top: var(--header-height);
     }
 
     .featured-grid {
@@ -816,7 +816,7 @@ main {
     }
 
     .grid-container {
-        grid-template-columns: 1fr !important;
+        margin-top: var(--header-height);
     }
 
     footer {
@@ -851,11 +851,21 @@ main {
     }
 
     .commercial-container {
-        padding: 0;
+        margin-top: var(--header-height);
     }
 }
 
 @media (max-width: 480px) {
+    .commercials-page main,
+    .werk-page main,
+    .home-page main {
+        padding: 0;
+    }
+
+    .grid-container {
+        margin-top: var(--header-height);
+    }
+
     .video-info {
         padding: 1rem;
     }
@@ -865,7 +875,7 @@ main {
     }
 
     .commercial-container {
-        padding: 0;
+        margin-top: var(--header-height);
     }
 }
 
