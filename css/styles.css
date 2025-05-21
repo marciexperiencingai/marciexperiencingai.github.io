@@ -1138,6 +1138,12 @@ header {
 /* Mobile adjustments for commercial pages */
 @media (max-width: 768px) {
     .commercial-page .commercial-container {
-        margin-top: calc(var(--header-height) + 20px) !important;
+        margin-top: var(--header-height) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .commercial-page .commercial-container {
+        margin-top: var(--header-height) !important;
     }
 } 
